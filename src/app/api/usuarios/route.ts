@@ -27,7 +27,7 @@ export async function GET() {
       const uid = userRecord.uid
       const email = userRecord.email
       const licencaDoc = await db.collection('Licencas').doc(uid).get()
-      const validade = licencaDoc.exists ? licencaDoc.data().validade : '❌ Sem licença'
+      cconst validade = licencaDoc.exists ? licencaDoc.data()?.validade || '❌ Sem licença' : '❌ Sem licença'
       listaFinal.push({ uid, email, validade })
     }
     nextPageToken = result.pageToken
