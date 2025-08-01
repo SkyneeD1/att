@@ -46,5 +46,7 @@ export async function DELETE(request: NextRequest, context: Context) {
   } catch (error) {
     console.error('Erro ao deletar usuário:', error)
     return NextResponse.json({ erro: 'Erro ao deletar usuário.' }, { status: 500 })
+}
+} })
   }
 }
